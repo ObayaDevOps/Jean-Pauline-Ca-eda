@@ -1,0 +1,1 @@
+export const APP_ID = "echospectra-mobile-app-nxmob"

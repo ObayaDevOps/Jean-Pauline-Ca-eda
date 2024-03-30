@@ -1,0 +1,15 @@
+{
+    "settings":{
+        "circleci.hostUrl": "",
+        "workbench.editorAssociations": {
+            "*.log": "default"
+        },
+        "explorer.confirmDelete": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "search.exclude": {
+            "**/.DS_Store": true,
+            "**/next.config.js": true,
+            "**/Thumbs.db": true
+        }
+    }
+}

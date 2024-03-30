@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+.DateContainer {
+  display: flex;
+  align-items: center;
+  width: 50vw;
+  height: 25px;
+
+  /* background-color: white; -->set this background color to whatever 
+  backgroundcolor you want the picker to be  */
+}
+
+.dateInput {
+  width: 100%;
+  height: 100%;
+}
+
+.dateInput input {
+  width: calc(100% + 25px);
+  height: 25px;
+  border: none;
+  background: transparent;
+  z-index: 1;
+}
+
+.icon {
+  width: 30px;
+}
+
+.icon svg {
+  margin-top: 3px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.marker {
+  background-image: url("/icons/marker.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
