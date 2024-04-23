@@ -88,7 +88,7 @@ const ObservationsMap: FC<ObservationsMapProps> = ({ data }) => {
           <Popup
             tipSize={5}
             anchor="bottom"
-            offsetTop={50}
+            offsetTop={70}
             closeOnClick={false}
             latitude={popupInfo.geometry[0]}
             longitude={popupInfo.geometry[1]}
@@ -98,13 +98,13 @@ const ObservationsMap: FC<ObservationsMapProps> = ({ data }) => {
               style={{ width: "150px", height: "70px" }}
               className="pl-4 flex">
               <div className="w-[50%] text-zinc-600">
-                <p className="border-b-2 border-gray-800">Company</p>
+                <p className=" text-black border-b-2 border-gray-500">Company</p>
                 <p>Type</p>
                 <p>Date</p>
                 <p>Status</p>
               </div>
               <div className="w-[50%]">
-                <p className="text-white/0 border-b-2 border-grey-800 ">Company</p>
+                <p className="text-white/0 border-b-2 border-gray-500 ">Company</p>
                 <p>{popupInfo.type}</p>
                 <p>{format(popupInfo.observationDate, 'MMM d, yyyy')}</p>
                 <p className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-300 dark:text-green-300">{popupInfo.status}</p>
