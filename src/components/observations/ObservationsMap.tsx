@@ -6,6 +6,8 @@ import Map, {
   Popup,
 } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { format, parse } from 'date-fns';
+
 
 interface DataType {
   priority: string;
@@ -27,6 +29,7 @@ const ObservationsMap: FC<ObservationsMapProps> = ({ data }) => {
     const map = mapRef.current.getMap();
     map.easeTo({ pitch: map.getPitch() === 0 ? 60 : 0 });
   };
+
 
   useEffect(() => {
     const button = document.createElement("button");
@@ -85,26 +88,26 @@ const ObservationsMap: FC<ObservationsMapProps> = ({ data }) => {
           <Popup
             tipSize={5}
             anchor="bottom"
-            offsetTop={30}
+            offsetTop={50}
             closeOnClick={false}
             latitude={popupInfo.geometry[0]}
             longitude={popupInfo.geometry[1]}
             onClose={() => setPopupInfo(null)}
-            className=" rounded-xl">
+            className=" rounded-xl px-2.5 py-2.5 border-black">
             <div
               style={{ width: "150px", height: "70px" }}
               className="pl-4 flex">
               <div className="w-[50%] text-zinc-600">
-                <p>Company</p>
+                <p className="border-b-2 border-gray-800">Company</p>
                 <p>Type</p>
                 <p>Date</p>
                 <p>Status</p>
               </div>
               <div className="w-[50%]">
-                <p>Company</p>
+                <p className="text-white/0 border-b-2 border-grey-800 ">Company</p>
                 <p>{popupInfo.type}</p>
-                <p>{popupInfo.observationDate}</p>
-                <p>{popupInfo.status}</p>
+                <p>{format(popupInfo.observationDate, 'MMM d, yyyy')}</p>
+                <p className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-300 dark:text-green-300">{popupInfo.status}</p>
               </div>
             </div>
           </Popup>
